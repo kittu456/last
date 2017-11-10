@@ -1,0 +1,122 @@
+#include <iostream>
+using namespace std;
+class Point{
+	private:
+		
+		int x;
+		int y;
+	
+        public:
+		Point()
+		{
+			x = 0;
+			y = 0;
+		}
+
+	 Point(int xval, int yval)
+	 {
+	 	x = xval;
+	 	y = yval;
+	 }
+	 
+	 void move(int dx, int dy)
+	 {
+	 	x = x+dx;
+	 	y = y+dy;
+	 }
+	 
+	 int Get_x()
+	 {
+	 	return x;
+	 }
+	 
+	 int Get_y()
+	 {
+	 	return y;
+
+}
+	 int Set_x(int xval)
+	 {
+	 	x = xval;
+	 }
+	 int Set_y(int yval)
+	 {
+	 	y = yval;
+	 }
+
+	 int print()
+	 {
+	 	cout<<"("<<x<<", "<<y<<")"<<endl;
+	 }
+
+};
+class Rectangle{
+	private:
+		Point p1;
+		Point p2;
+		Point p3;
+		Point p4;
+		
+		public:
+			Rectangle()
+			{
+				p1.Set_x(0);
+				p1.Set_y(0);
+				p2.Set_x(0);
+				p2.Set_y(1);
+				p3.Set_x(1);
+				p3.Set_y(1);
+				p4.Set_x(1);
+				p4.Set_y(0);
+			}
+			Rectangle(int x1,int y1,int x3,int y3)
+			{
+				p1.Set_x(x1);
+				p1.Set_y(y1);
+				p3.Set_x(x3);
+				p3.Set_y(y3);
+				p2.Set_x(x1);
+				p2.Set_y(y3);
+				p4.Set_x(x3);
+				p4.Set_y(y1);
+				
+			}
+			void printrect()
+			{
+				cout<<"The points of the rectangle are = "<<p1.print()<<", "<<p2.print()<<", "<<p3.print()<<", "<<p4.print()<<endl;
+			}
+			private:
+				int side1()
+				{
+					int s1,s2,len;
+					s1 = p1.Get_x();
+					s2 = p4.Get_x();
+					len = s2-s1;
+					return len;
+				}
+				int side2()
+				{
+					int s3,s4,bre;
+					s3 = p1.Get_y();
+					s4 = p2.Get_y();
+					bre = s4-s3;
+					return bre;
+				}
+				public:
+					int area()
+					{
+						int l,b,a;
+						l = side1();
+						b = side2();
+						a = l*b;
+						cout<<"The area is = "<<a<<endl;
+					}
+			
+			
+};
+int main()
+{
+	Rectangle rect1(1,2,3,4);
+	rect1.printrect();
+	rect1.area();
+}
