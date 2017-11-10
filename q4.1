@@ -1,0 +1,57 @@
+#include <iostream>
+using namespace std;
+class Point{
+	private:
+		
+		int x;
+		int y;
+	
+        public:
+		Point()
+		{
+			x = 0;
+			y = 0;
+		}
+
+	 Point(int xval, int yval)
+	 {
+	 	x = xval;
+	 	y = yval;
+	 }
+	 
+	 void move(int dx, int dy)
+	 {
+	 	x = x+dx;
+	 	y = y+dy;
+	 }
+	 
+	 int Get_x()
+	 {
+	 	return x;
+	 }
+	 
+	 int Get_y()
+	 {
+	 	return y;
+
+}
+	 int Set_x(int xval)
+	 {
+	 	x = xval;
+	 }
+	 int Set_y(int yval)
+	 {
+	 	y = yval;
+	 }
+
+	 int print()
+	 {
+	 	cout<<"("<<x<<", "<<y<<")"<<endl;
+	 }
+
+};
+int main()
+{
+	Point p1;
+	p1.print();
+}
